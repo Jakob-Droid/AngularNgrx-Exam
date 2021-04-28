@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">{{ event.title }}</div>
+    <hr />
+    <div class="card-subtitle text-muted">Rating: {{ event.rating }}</div>
+    <span class="card-subtitle text-muted"
+      >Duration: {{ event.duration }} hours</span
+    >
+  </div>
+  <div>
+    <div>
+      <img class="card-img-top" [src]="event.imagePath" />
+    </div>
+    <p>Presenter: {{ event.presenter }} StartTime {{ event.startDate }}</p>
+    <p class="card-text">{{ event.description }}</p>
+
+    <div>
+      <div>
+        <p class="card-subtitle">{{ event.location.country }}</p>
+        <p class="card-subtitle">{{ event.location.city }}</p>
+        <span class="card-subtitle">{{ event.location.zipCode }}</span>
+        <p class="card-subtitle">{{ event.location.address }}</p>
+      </div>
+      <a class="card-link" [routerLink]="['/events', event.id]">Details</a>
+    </div>
+  </div>
+</div>

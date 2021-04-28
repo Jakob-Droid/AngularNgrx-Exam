@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-xxl-4 row-cols-lg-2">
+    <div class="col mb-4" *ngFor="let event of events$ | async">
+      <app-event [event]="event"></app-event>
+    </div>
+  </div>
+</div>

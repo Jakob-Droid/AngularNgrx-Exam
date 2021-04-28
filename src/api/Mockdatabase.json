@@ -1,0 +1,116 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Hello-World",
+      "rating": 2.4,
+      "presenter": "John Doe",
+      "duration": 3,
+      "description": "This is a Ted-Talk about the uses of Hello word in modern-day programming?!",
+      "imagePath": "https://michielbraat.nl/images/hello_world.png",
+      "startDate": "10/2/2020",
+      "location": {
+        "country": "Italy",
+        "city": "Pompeii",
+        "zipCode": "75200",
+        "address": "20th Round Street"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Programming with Josh",
+      "rating": 3.5,
+      "presenter": "Josh Programmer",
+      "duration": 2,
+      "description": "How to use an outdated language like PHP",
+      "imagePath": "https://www.redhat.com/sysadmin/sites/default/files/styles/full/public/2020-07/code-2434271_1280%20Cropped.jpg?itok=_7GbwQKT",
+      "startDate": "1/4/2021",
+      "location": {
+        "country": "Sweden",
+        "city": "Stockholm",
+        "zipCode": "2003",
+        "address": "10th should be Denmark"
+      }
+    },
+    {
+      "id": 3,
+      "title": "You got Hacked!",
+      "rating": 1.4,
+      "presenter": "Anon Badger",
+      "duration": 1,
+      "description": "A really bad talk about how you can hack a google docs doc",
+      "imagePath": "https://static.timesofisrael.com/www/uploads/2020/12/iStock-1090872318.jpg",
+      "startDate": "14/6/2022",
+      "location": {
+        "country": "England",
+        "city": "London",
+        "zipCode": "75200",
+        "address": "31st Tolkien Street"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Should I write code in main.js?",
+      "rating": 5,
+      "presenter": "Some dude from the street",
+      "duration": 3,
+      "description": "No, why would you ever ask that?",
+      "imagePath": "https://images.ctfassets.net/yr4qj72ki4ky/6G2JeQnM8bsnjgoJBjljCh/f30782e127727ee309ebf87fb59cf446/best-programming-languages-2020-Hero.jpg?fm=webp&q=72",
+      "startDate": "6/4/2025",
+      "location": {
+        "country": "Australia",
+        "city": "Sydney",
+        "zipCode": "2060",
+        "address": "Bennelong Point"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Why the PO is the most Important member on the team",
+      "rating": 4,
+      "presenter": "A PO",
+      "duration": 5,
+      "description": "A ted-talk on how POs are the MVP of the development team",
+      "imagePath": "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1618815281000/photosp/da841bbf-05cf-431d-8b17-924abc6b9b4e/stock-photo-white-background-box-woman-emotion-thinking-awareness-question-minimal-mental-health-da841bbf-05cf-431d-8b17-924abc6b9b4e.jpg",
+      "startDate": "25/6/2045",
+      "location": {
+        "country": "France",
+        "city": "Paris",
+        "zipCode": "75000",
+        "address": "Avenue Montaigne"
+      }
+    },
+    {
+      "id": 6,
+      "title": "How to get sued for copyright infringements",
+      "rating": 2,
+      "presenter": "Jakob Hammer",
+      "duration": 1,
+      "description": "How I got sued for using pictures in my exam, atleast I hope I get a good grade",
+      "imagePath": "https://www.unexplainable.net/wp-content/uploads/2020/05/rsz_copyright-pirate-flag_1.jpg.webp",
+      "startDate": "26/5/2021",
+      "location": {
+        "country": "Denmark",
+        "city": "Roskilde",
+        "zipCode": "4000",
+        "address": "On Teams?"
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "John-Doe",
+      "firstName": "John",
+      "lastName": "Doe",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "Jakob",
+      "firstName": "Jakob",
+      "lastName": "Hammer",
+      "password": "1234"
+    }
+  ]
+}
