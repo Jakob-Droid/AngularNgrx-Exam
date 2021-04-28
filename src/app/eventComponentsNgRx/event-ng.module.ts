@@ -6,6 +6,8 @@ import { EventNgComponent } from './event-ng/event-ng.component';
 import { EventListNgComponent } from './event-list-ng/event-list-ng.component';
 import { EventDetailNgComponent } from './event-detail-ng/event-detail-ng.component';
 import { EventServiceNg } from './event-ng.service';
+import { eventReducer } from './state/event.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,11 @@ import { EventServiceNg } from './event-ng.service';
     EventListNgComponent,
     EventDetailNgComponent,
   ],
-  imports: [CommonModule, EventNgRoutingModule],
+  imports: [
+    CommonModule,
+    EventNgRoutingModule,
+    StoreModule.forFeature('events', eventReducer),
+  ],
   providers: [EventServiceNg],
 })
 export class EventNgModule {}
