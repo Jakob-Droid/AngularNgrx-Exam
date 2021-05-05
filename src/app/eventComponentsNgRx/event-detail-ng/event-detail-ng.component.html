@@ -1,1 +1,2 @@
 <p>event-detail-ng works!</p>
+<p *ngIf="selectedEvent$ | async as sel">{{ sel | json }}</p>

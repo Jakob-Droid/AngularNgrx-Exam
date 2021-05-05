@@ -3,5 +3,8 @@
     <div class="col mb-4" *ngFor="let event of events$ | async">
       <app-event-ng [event]="event"></app-event-ng>
     </div>
+    <div *ngIf="error$ | async as error">
+      <p>Error occured: {{ error | json }}</p>
+    </div>
   </div>
 </div>

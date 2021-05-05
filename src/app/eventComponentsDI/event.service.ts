@@ -11,11 +11,13 @@ export class EventService {
   constructor(private http: HttpClient) {}
 
   getEvents(): Observable<EventElement[]> {
+    console.log('DI-service');
     return this.http
       .get<EventElement[]>('/api/events')
       .pipe(tap((i) => console.log(i)));
   }
   getEvent(id: number) {
+    console.log('DI-service');
     return this.http
       .get<EventElement>('/api/events/' + id)
       .pipe(tap((i) => console.log(i)));

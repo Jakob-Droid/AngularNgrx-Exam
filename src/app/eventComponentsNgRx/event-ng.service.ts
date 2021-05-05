@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { EventElement } from '../models/event';
 
 @Injectable({
@@ -11,13 +11,21 @@ export class EventServiceNg {
   constructor(private http: HttpClient) {}
 
   getEvents(): Observable<EventElement[]> {
-    return this.http
-      .get<EventElement[]>('/api/events')
-      .pipe(tap((i) => console.log(i)));
+    console.log('ng-service');
+    return this.http.get<EventElement[]>('/api/events').pipe(
+      tap((i) => console.log(i)),
+      catchError((err) => {
+        return throwError(err);
+      })
+    );
   }
   getEvent(id: number) {
-    return this.http
-      .get<EventElement>('/api/events/' + id)
-      .pipe(tap((i) => console.log(i)));
+    console.log('ng-service');
+    return this.http.get<EventElement>('/api/events/' + id).pipe(
+      tap((i) => console.log(i)),
+      catchError((err) => {
+        return throwError(err);
+      })
+    );
   }
 }

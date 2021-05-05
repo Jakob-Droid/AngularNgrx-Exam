@@ -8,6 +8,8 @@ import { EventDetailNgComponent } from './event-detail-ng/event-detail-ng.compon
 import { EventServiceNg } from './event-ng.service';
 import { eventReducer } from './state/event.reducer';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { EventEffects } from './state/event.effect';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { StoreModule } from '@ngrx/store';
     CommonModule,
     EventNgRoutingModule,
     StoreModule.forFeature('events', eventReducer),
+    EffectsModule.forFeature([EventEffects]),
   ],
   providers: [EventServiceNg],
 })
