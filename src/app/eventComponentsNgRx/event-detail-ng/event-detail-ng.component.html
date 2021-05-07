@@ -1,2 +1,18 @@
 <p>event-detail-ng works!</p>
-<p *ngIf="selectedEvent$ | async as sel">{{ sel | json }}</p>
+<label for="niceDisplay">Do you want Nice Display, Click Here!</label>
+<input (click)="toggleNiceDisplay()" type="checkbox" name="niceDisplay" />
+<div *ngIf="selectedEvent$ | async as sel">
+  <div *ngIf="isNiceDisplay | async; else displayAsJson">
+    <p>{{ sel.title }}</p>
+    <img src="{{ sel.imagePath }}" style="width: 200px" />
+    <div>
+      <span>Location of Event: {{ sel.location.address }},</span>
+      <span> {{ sel.location.city }}</span>
+    </div>
+    <p>By {{ sel.presenter }}</p>
+    <p>{{ sel.description }}</p>
+  </div>
+  <ng-template #displayAsJson>
+    <p>{{ sel | json }}</p>
+  </ng-template>
+</div>

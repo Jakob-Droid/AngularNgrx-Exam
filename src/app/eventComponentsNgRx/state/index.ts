@@ -51,3 +51,7 @@ export const getHasLoadedFromApi = createSelector(
   getEventsFeatureState,
   (state) => state.hasLoadedFromApi
 );
+export const getNiceDisplay = createSelector(
+  getEventsFeatureState,
+  (state) => state.showNiceDisplay
+);

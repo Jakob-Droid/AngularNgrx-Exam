@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { EventElement } from 'src/app/models/event';
 import { EventServiceNg } from '../event-ng.service';
-import { getEvent } from '../state';
+import { getEvent, getNiceDisplay } from '../state';
 import { eventPageActions } from '../state/actions';
 import { EventState } from '../state/event.reducer';
 
@@ -16,6 +16,7 @@ import { EventState } from '../state/event.reducer';
 export class EventDetailNgComponent implements OnInit {
   eventId;
   selectedEvent$: Observable<EventElement>;
+  isNiceDisplay: Observable<boolean>;
   constructor(
     private route: ActivatedRoute,
     private store: Store<EventState>
@@ -25,5 +26,10 @@ export class EventDetailNgComponent implements OnInit {
     this.selectedEvent$ = this.store.select(getEvent);
     this.route.params.subscribe((e) => ({ id: (this.eventId = +e.id) }));
     this.store.dispatch(eventPageActions.loadEvent({ id: this.eventId }));
+    this.isNiceDisplay = this.store.select(getNiceDisplay);
+  }
+
+  toggleNiceDisplay() {
+    this.store.dispatch(eventPageActions.toggleNiceDisplay());
   }
 }

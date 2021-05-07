@@ -8,12 +8,14 @@ export interface EventState {
   error: string;
   hasLoadedFromApi: boolean;
   selectedEventId: number | null;
+  showNiceDisplay: boolean;
 }
 const initialState: EventState = {
   events: [],
   error: '',
   hasLoadedFromApi: false,
   selectedEventId: null,
+  showNiceDisplay: false,
 };
 
 //reducer
@@ -47,6 +49,12 @@ export const eventReducer = createReducer(
     return {
       ...state,
       selectedEventId: action.id,
+    };
+  }),
+  on(eventPageActions.toggleNiceDisplay, (state) => {
+    return {
+      ...state,
+      showNiceDisplay: !state.showNiceDisplay,
     };
   })
 );
