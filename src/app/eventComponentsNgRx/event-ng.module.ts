@@ -10,6 +10,7 @@ import { eventReducer } from './state/event.reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { EventEffects } from './state/event.effect';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EventEffects } from './state/event.effect';
     EventDetailNgComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
     EventNgRoutingModule,
     StoreModule.forFeature('events', eventReducer),

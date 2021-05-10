@@ -1,9 +1,14 @@
-<p>event-detail-ng works!</p>
+<!-- This would be a good place for the shellcomponent, so we wounldn't need to use the async pipe twice on the same property...-->
 <label for="niceDisplay">Do you want Nice Display, Click Here!</label>
-<input (click)="toggleNiceDisplay()" type="checkbox" name="niceDisplay" />
+<input
+  [checked]="isNiceDisplay | async"
+  (click)="toggleNiceDisplay()"
+  type="checkbox"
+  name="niceDisplay"
+/>
 <div *ngIf="selectedEvent$ | async as sel">
   <div *ngIf="isNiceDisplay | async; else displayAsJson">
-    <p>{{ sel.title }}</p>
+    <h1>{{ sel.title }}</h1>
     <img src="{{ sel.imagePath }}" style="width: 200px" />
     <div>
       <span>Location of Event: {{ sel.location.address }},</span>

@@ -5,8 +5,9 @@ import { EventState } from './event.reducer';
 
 // Extends the app state to include the event feature.
 // This is required because events are lazy loaded.
-// So the reference to eventstate cannot be added to app.state.ts directly.
-//States :
+// So the reference to eventstate cannot be added to our root state directly.
+
+//State :
 export interface State extends appState.State {
   events: EventState;
 }

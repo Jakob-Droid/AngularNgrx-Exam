@@ -13,6 +13,7 @@ import { EventService } from '../event.service';
 export class EventDetailComponent implements OnInit {
   selectedEvent$: Observable<EventElement>;
   eventId: number;
+  isNiceDisplay: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,5 +23,9 @@ export class EventDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((e) => (this.eventId = +e.id));
     this.selectedEvent$ = this.eventService.getEvent(this.eventId);
+  }
+
+  toggleNiceDisplay() {
+    this.isNiceDisplay = !this.isNiceDisplay;
   }
 }
