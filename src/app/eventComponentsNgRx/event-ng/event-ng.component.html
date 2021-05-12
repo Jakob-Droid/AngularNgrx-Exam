@@ -23,5 +23,8 @@
       </div>
       <a class="card-link" [routerLink]="['./events', event.id]">Details</a>
     </div>
+    <div>
+      <button (click)="deleteEvent()">Delete This Event</button>
+    </div>
   </div>
 </div>

@@ -4,11 +4,13 @@ import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import {
   catchError,
+  concatMap,
   filter,
   map,
   mergeMap,
   withLatestFrom,
 } from 'rxjs/operators';
+import { EventElement } from 'src/app/models/event';
 import { getHasLoadedFromApi } from '.';
 import { EventServiceNg } from '../event-ng.service';
 import { eventApiActions, eventPageActions } from './actions';
@@ -33,6 +35,35 @@ export class EventEffects {
           catchError((error) => {
             return of(eventApiActions.loadEventsFailure({ error }));
           })
+        )
+      )
+    )
+  );
+
+  createEvent$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(eventPageActions.createEvent),
+      concatMap((action) =>
+        this.eventService.postEvent(action.event).pipe(
+          map((event) => eventApiActions.createEventSuccess({ event })),
+          catchError((error) =>
+            of(eventApiActions.createEventFailure({ error }))
+          )
+        )
+      )
+    )
+  );
+  deleteEvent$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(eventPageActions.deleteEvent),
+      mergeMap((action) =>
+        this.eventService.deleteEvent(action.id).pipe(
+          map(
+            () => eventApiActions.deleteEventSuccess({ id: action.id }),
+            catchError((error) =>
+              of(eventApiActions.deleteEventFailure({ error }))
+            )
+          )
         )
       )
     )

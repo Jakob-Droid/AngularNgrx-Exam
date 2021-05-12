@@ -34,4 +34,26 @@ export class EventListNgComponent implements OnInit {
     //Not the right way to do it, however it is show in my synopsis
     // this.store.subscribe((state: State) => (this.events = state.events.events));
   }
+  createNewEvent() {
+    let event: EventElement = {
+      id: 0,
+      description: 'A great feast in Valhalla',
+      duration: 2000,
+      location: {
+        address: 'Great Hall of Valhalla',
+        city: 'Somewhere behind the rainbow',
+        country: 'Asgård',
+        zipCode: '2000',
+      },
+      presenter: 'Odin',
+      rating: 5,
+      title: 'How to make a hammer',
+      startDate: '12/06/420',
+      imagePath: '../../../assets/plakat.jpg',
+    };
+    this.store.dispatch(eventPageActions.createEvent({ event }));
+  }
+  deleteEvent(id: number) {
+    this.store.dispatch(eventPageActions.deleteEvent({ id }));
+  }
 }

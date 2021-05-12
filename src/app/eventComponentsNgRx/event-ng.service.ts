@@ -28,4 +28,18 @@ export class EventServiceNg {
       })
     );
   }
+  postEvent(event: EventElement): Observable<EventElement> {
+    console.log('ng-service');
+    return this.http.post<EventElement>('/api/events', event).pipe(
+      tap((i) => console.log(i)),
+      catchError((err) => throwError(err))
+    );
+  }
+  deleteEvent(id: number): Observable<{}> {
+    console.log('ng-service');
+    return this.http.delete<EventElement>('/api/events/' + id).pipe(
+      tap((i) => console.log(i)),
+      catchError((err) => throwError(err))
+    );
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EventElement } from 'src/app/models/event';
 
 @Component({
@@ -8,7 +8,12 @@ import { EventElement } from 'src/app/models/event';
 })
 export class EventNgComponent implements OnInit {
   @Input() public event: EventElement;
+  @Output() OnDeleteEvent = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  deleteEvent() {
+    this.OnDeleteEvent.emit(this.event.id);
+  }
 }

@@ -5,7 +5,7 @@ import { eventApiActions, eventPageActions } from './actions/index';
 
 export interface EventState {
   events: EventElement[];
-  error: string;
+  error: string | null;
   hasLoadedFromApi: boolean;
   selectedEventId: number | null;
   showNiceDisplay: boolean;
@@ -22,29 +22,23 @@ const initialState: EventState = {
 
 export const eventReducer = createReducer(
   initialState,
-  on(
-    eventApiActions.loadEventsSuccess,
-    (state, action): EventState => {
-      return {
-        //spreading the state to allow nonchanged state to be copied
-        ...state,
-        //overwriting the events array with the new events
-        events: action.events,
-        hasLoadedFromApi: true,
-        error: '',
-      };
-    }
-  ),
-  on(
-    eventApiActions.loadEventsFailure,
-    (state, action): EventState => {
-      return {
-        ...state,
-        events: [],
-        error: action.error,
-      };
-    }
-  ),
+  on(eventApiActions.loadEventsSuccess, (state, action): EventState => {
+    return {
+      //spreading the state to allow nonchanged state to be copied
+      ...state,
+      //overwriting the events array with the new events
+      events: action.events,
+      hasLoadedFromApi: true,
+      error: '',
+    };
+  }),
+  on(eventApiActions.loadEventsFailure, (state, action): EventState => {
+    return {
+      ...state,
+      events: [],
+      error: action.error,
+    };
+  }),
   on(eventPageActions.loadEvent, (state, action) => {
     return {
       ...state,
@@ -55,6 +49,32 @@ export const eventReducer = createReducer(
     return {
       ...state,
       showNiceDisplay: !state.showNiceDisplay,
+    };
+  }),
+  on(eventApiActions.createEventSuccess, (state, action) => {
+    return {
+      ...state,
+      error: null,
+      events: [...state.events, action.event],
+    };
+  }),
+  on(eventApiActions.loadEventsFailure, (state, action) => {
+    return {
+      ...state,
+      error: action.error,
+    };
+  }),
+  on(eventApiActions.deleteEventSuccess, (state, action) => {
+    return {
+      ...state,
+      error: null,
+      events: state.events.filter((x) => x.id !== action.id),
+    };
+  }),
+  on(eventApiActions.deleteEventFailure, (state, action) => {
+    return {
+      ...state,
+      error: action.error,
     };
   })
 );

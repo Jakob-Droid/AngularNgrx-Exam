@@ -1,7 +1,13 @@
+<div>
+  <button (click)="createNewEvent()">Create New Event</button>
+</div>
 <div class="container mt-5">
   <div class="row row-cols-1 row-cols-xxl-4 row-cols-lg-2">
     <div class="col mb-4" *ngFor="let event of events$ | async">
-      <app-event-ng [event]="event"></app-event-ng>
+      <app-event-ng
+        (OnDeleteEvent)="deleteEvent($any($event))"
+        [event]="event"
+      ></app-event-ng>
     </div>
     <div *ngIf="error$ | async as error">
       <p>Error occured: {{ error | json }}</p>
