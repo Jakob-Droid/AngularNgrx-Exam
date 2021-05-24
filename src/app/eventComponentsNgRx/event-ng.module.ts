@@ -22,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     CommonModule,
     EventNgRoutingModule,
+
     StoreModule.forFeature('events', eventReducer),
+    
     EffectsModule.forFeature([EventEffects]),
   ],
   providers: [EventServiceNg],

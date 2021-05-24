@@ -49,7 +49,7 @@ export class EventListNgComponent implements OnInit {
       rating: 5,
       title: 'How to make a hammer',
       startDate: '12/06/420',
-      imagePath: '../../../assets/plakat.jpg',
+      imagePath: 'http://www.kultunaut.dk/images/film/7098920/plakat.jpg',
     };
     this.store.dispatch(eventPageActions.createEvent({ event }));
   }

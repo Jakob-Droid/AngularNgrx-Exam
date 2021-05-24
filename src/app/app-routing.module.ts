@@ -18,7 +18,7 @@ const routes: Routes = [
         (m) => m.EventNgModule
       ),
   },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

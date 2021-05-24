@@ -20,15 +20,16 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    StoreModule.forRoot({}),
     NgbModule,
     HttpClientModule,
+
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
