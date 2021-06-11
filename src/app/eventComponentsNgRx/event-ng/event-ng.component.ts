@@ -1,10 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { EventElement } from 'src/app/models/event';
 
 @Component({
   selector: 'app-event-ng',
   templateUrl: './event-ng.component.html',
   styleUrls: ['./event-ng.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventNgComponent implements OnInit {
   @Input() public event: EventElement;

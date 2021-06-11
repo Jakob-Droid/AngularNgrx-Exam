@@ -1,4 +1,6 @@
+import { Statement } from '@angular/compiler';
 import { createReducer, on } from '@ngrx/store';
+import { Action } from 'rxjs/internal/scheduler/Action';
 import { EventElement } from 'src/app/models/event';
 
 import { eventApiActions, eventPageActions } from './actions/index';
@@ -58,6 +60,14 @@ export const eventReducer = createReducer(
       events: [...state.events, action.event],
     };
   }),
+  on(eventApiActions.createEventFailure, (state, action) => {
+    return {
+      ...state,
+      error: action.error,
+    };
+  }),
+  //createEventsFailure :)
+
   on(eventApiActions.loadEventsFailure, (state, action) => {
     return {
       ...state,

@@ -95,6 +95,22 @@
         "zipCode": "4000",
         "address": "On Teams?"
       }
+    },
+    {
+      "id": 7,
+      "description": "A great feast in Valhalla",
+      "duration": 2000,
+      "location": {
+        "address": "Great Hall of Valhalla",
+        "city": "Somewhere behind the rainbow",
+        "country": "Asgård",
+        "zipCode": "2000"
+      },
+      "presenter": "Odin",
+      "rating": 5,
+      "title": "How to make a hammer",
+      "startDate": "12/06/420",
+      "imagePath": "http://www.kultunaut.dk/images/film/7098920/plakat.jpg"
     }
   ],
   "users": [

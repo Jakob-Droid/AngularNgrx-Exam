@@ -1,6 +1,3 @@
-<div>
-  <button (click)="createNewEvent()">Create New Event</button>
-</div>
 <div class="container mt-5">
   <div class="row row-cols-1 row-cols-xxl-4 row-cols-lg-2">
     <div class="col mb-4" *ngFor="let event of events$ | async">
@@ -13,4 +10,9 @@
       <p>Error occured: {{ error | json }}</p>
     </div>
   </div>
+</div>
+<div>
+  <button class="btn btn-primary m-3" (click)="createNewEvent()">
+    Create New Event
+  </button>
 </div>
