@@ -1,0 +1,63 @@
+----FØR EKSAMEN----
+Åben powerpoint
+Åben kode -> kør npm run api, Ng serve -o
+Sørg for at der ikke er valhalla event i listen
+Gå til Home, refresh og clear F12 Console 
+
+---Start på Eksamen---
+
+Powerpoint
+
+
+-----Program------
+
+Kør program => F12 console
+
+Gå ind i DI Gå til details Nice-display
+Gå ind i ngrx, ingen forskel
+Gå til details og tryk nice-display
+
+Gå tilbage til DI, details
+Gå ind i Ngrx igen,
+Gå til Home, og til NgRx igen, understreg hastigheden
+Gå til details.
+Tilbage til NgRx
+
+------Kode------
+Event-list-ng.html => Vis createNewEvent
+
+event-list-ng.ts => vis this.store.dispatch(createEvent) Ctrl + klik på createEvent
+
+Fortæl om action Type property (Hver string er specifik for den action, må ikke være ens med andre)
+
+Gå til effects, fortæl om createEventEffect
+
+Gå til reducer fortæl om On-funktion mens du laver createEventsFailure :D Fortæl gerne om hvorfor man spreder staten
+
+--Pure Component--
+Event-ng.ts vis input() og Output() vis også OnPush, som change detection, nævn PureComponent
+
+Event-list-ng.html vis async pipe i ngFor. Automatisk udpakker fra Observablen og rerenderer viewet
+
+
+---VIS CACHING---
+Caching i effects withLatestFrom
+
+
+
+
+
+
+
+------HVIS DER ER TID-------
+
+Refresh siden
+I console, gå ind i Redux
+Tryk Create New Event
+Gå ned og vis new event
+Tryk delete event
+Vis timeline i Redux devtools vis de forskellige dispatches og state
+tryk på dropdown vælg chart, og vis timelinen så man kan se staten ændre sig
+
+
+

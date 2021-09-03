@@ -66,8 +66,6 @@ export const eventReducer = createReducer(
       error: action.error,
     };
   }),
-  //createEventsFailure :)
-
   on(eventApiActions.loadEventsFailure, (state, action) => {
     return {
       ...state,
