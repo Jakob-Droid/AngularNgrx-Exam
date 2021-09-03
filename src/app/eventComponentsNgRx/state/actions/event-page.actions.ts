@@ -1,4 +1,4 @@
-import { createAction, createSelector, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { EventElement } from 'src/app/models/event';
 
 export const loadEvents = createAction('[Event Page] Load');
